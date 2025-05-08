@@ -13,7 +13,7 @@ app.get('/', async(req, res) => {
     res.send("Dance app backend works");
 });
 
-app.post('/api/users', async (req,res) => {
+app.post('/api/signup', async (req,res) => {
     const{username, pref_name, email, password_hash} = req.body;
 
     if (!username|| !email || !password_hash|| !pref_name) {

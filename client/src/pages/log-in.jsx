@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './default.css';
+import Navbar from '../assets/nav-bar.jsx';
 
 export default function LogIn (){
     const [form, setForm] = useState({email: '', password: ''});
@@ -14,27 +15,29 @@ export default function LogIn (){
         e.preventDefault();
         setError('');
 
-        try{
-            const res =await fetch('http://localhost/3000/api/login',{
+        try {
+            const res = await fetch('http://localhost/3000/api/login', {
                 method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body:JSON.stringify(form)
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(form)
             });
 
             const data = await res.json();
 
-            if (!res.ok){
+            if (!res.ok) {
                 setError(data.error || 'Login Failed');
-            } else{
+            } else {
                 setUser(data.user);
             }
-        }catch(err){
+        } catch (err) {
             console.error(err);
             setError('Something went wrong');
         }
+    }
 
         return(
             <div className = "body">
+                <Navbar/>
                 <h2>Login</h2>
                 {error && <p style={{ color: 'red'}}>{error}</p>}
                 {!user? (
@@ -45,7 +48,7 @@ export default function LogIn (){
                             value={form.email}
                             onChange={handleChange}
                             required
-                            /><br/>
+                        /><br/>
                         <input
                             name="password"
                             type="password"
@@ -53,17 +56,18 @@ export default function LogIn (){
                             value={form.password}
                             onChange={handleChange}
                             required
-                            /><br/>
-                        <button type = "submit">Login</button>
+                        /><br/>
+                        <button type="submit">Login</button>
+                        <h3>Dont have an account yet?</h3>
+                        <a href='/signup'>Sign Up!</a>
                     </form>
                     ):(
-                        <div>
-                        <h3>Welcome back, {user.pref_name}!</h3>
+                    <div>
+                    <h3>Welcome back, {user.pref_name}!</h3>
                             <h1>This works.</h1>
                         </div>
-                    )};
+                    )}
             </div>
         )
-    }
 }
 

@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import './App.css'
-
+import WaveCanvas from "./assets/wave.jsx";
+import Navbar from "./assets/nav-bar.jsx";
 function App() {
 
   return (
-      <div className='body'>
-      <h1>Dancehub</h1>
-        <h3>temp title</h3>
-      <div className="card">
-        <a href="/login">Log in</a>
+      <>
+          <Navbar/>
+      <div>
+          <WaveCanvas/>
+            <h1>Welcome to Dancehub</h1>
       </div>
-      </div>
+      </>
   )
 }
 

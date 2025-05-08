@@ -1,0 +1,48 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #333333, black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    height: 4rem;
+    z-index: 10;
+    font-family: 'Redaction 35', serif;
+    color: white;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 10rem;
+    width: auto;
+    margin-right: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav-right {
+    display: flex;
+    gap: 2rem;
+    margin-right: 5rem;
+}
+
+.nav-right a {
+    color: red;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-right a:hover {
+    font-size: 25px;
+}
