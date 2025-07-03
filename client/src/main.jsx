@@ -1,22 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import '@fontsource/redaction-35'
+import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
-import Home from './pages/home.jsx'
-import LogIn from './pages/log-in.jsx'
-import SignUp from './pages/sign-in.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <StrictMode>
-        <Routes>
-            <Route path="/" element={<App />}/>
-            <Route path="/home" element={<Home/>}/>
-            <Route path="/login" element={<LogIn/>}/>
-            <Route path="/signup" element={<SignUp/>}/>
-        </Routes>
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
-  </BrowserRouter>
 )

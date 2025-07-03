@@ -7,7 +7,7 @@ export default function Navbar(){
         <nav className="navbar">
             <div className="nav-left">
                 <Link to="/">
-                    <img src="/pixelheart.png" alt="Dancehub" className="logo-img"/>
+
                 </Link>
             </div>
 

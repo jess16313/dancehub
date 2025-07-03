@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import './default.css';
 import Navbar from '../assets/nav-bar.jsx';
+import { useNavigate, Link } from "react-router-dom";
 
-
-export default function SignUp(){
-    const [form,setForm] = useState({pref_name:'', username:'',password:''});
-    const [user, setUser] = useState(null);
+export default function SignUp() {
+    const [form, setForm] = useState({
+        pref_name: '',
+        username: '',
+        email: '',
+        password_hash: ''
+    });
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setForm({...form, [e.target.name]: e.target.value});
@@ -16,64 +21,81 @@ export default function SignUp(){
         e.preventDefault();
         setError('');
 
-        try{
-            const res = await fetch('http://localhost/3000/api/signup', {
-                method:'POST',
-                headers:{'Content-Type': 'application/json'},
+        try {
+            const res = await fetch('http://localhost:3000/api/signup', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(form)
             });
 
             const data = await res.json();
 
-            if(!res.ok){
-                setError(data.error || 'SignUp Failed');
-            }else{
-                setUser(data.user);
+            if (!res.ok) {
+                setError(data.error || 'Sign Up Failed');
+            } else {
+                // Redirect to login page after successful signup
+                navigate('/login', { 
+                    state: { 
+                        message: 'Sign up successful! Please log in.' 
+                    } 
+                });
             }
-        }catch(err){
+        } catch(err) {
             console.error(err);
             setError('Something went wrong');
         }
     }
-    return(
-        <div className = "body">
+
+    return (
+        <div className="body">
             <Navbar/>
             <h2>Sign Up</h2>
-            {error && <p style={{ color:'red'}}>{error}</p>}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
             <form onSubmit={handleSubmit}>
-                <input
-                    name="pref_name"
-                    placeholder="Your Name"
-                    value={form.pref_name}
-                    onChange={handleChange}
-                    required
-                /><br/>
-                <input
-                    name="user_name"
-                    placeholder="Username"
-                    value={form.username}
-                    onChange={handleChange}
-                    required
-                    /><br/>
-                <input
-                    name="email"
-                    placeholder="Email"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                /><br/>
-                <input
-                    name="password"
-                    placeholder="Password"
-                    value={form.password}
-                    onChange={handleChange}
-                    required
-                /><br/>
-                <button type="Submit">Sign Up</button>
-                <h3>Already have an account?</h3>
-                <a href='/login'>Log in!</a>
+                <div className="form-group">
+                    <input
+                        name="pref_name"
+                        placeholder="Your Name"
+                        value={form.pref_name}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <input
+                        name="username"
+                        placeholder="Username"
+                        value={form.username}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <input
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <input
+                        name="password_hash"
+                        type="password"
+                        placeholder="Password"
+                        value={form.password_hash}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <button type="submit" className="submit-button">Sign Up</button>
+                <div className="auth-link">
+                    <h3>Already have an account?</h3>
+                    <Link to="/login">Log in!</Link>
+                </div>
             </form>
         </div>
-    )
-
+    );
 }

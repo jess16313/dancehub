@@ -1,13 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Yanone+Kaffeesatz:wght@200..700&display=swap');
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 body{
-  font-family: 'Redaction 35', serif;
+  font-family: 'Bungee', 'Yanone-Kaffeesatz',serif;
   color: white;
   font-size: 60px;
+}
+
+h1{
+  font-family: 'Bungee', 'serif';
+  color: #E5A657;
+  font-size: 10vw;
+  padding:0;
+  margin:0;
+}
+
+p{
+  font-family: 'Yanone Kaffeesatz','serif';
+  font-size: 2vw;
+  font-weight: lighter;
+  color:#F5E2CE;
+}
+
+.title-text{
+  padding: 25vh 10vh 10vh 10vh;
+  margin-right: 40vw;
+}
+
+.title-container{
+  background: rgba(181,51,36,50);
+  background-size: 100vw 100vh;
+  display:flex;
+  width: 100vw;
+  height:100vh;
+}
+
+.container-2{
+  width:100vw;
+}
+
+.scroll-down{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-up{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-holder{
+  position: relative;
+  height: 300vh;
+}
+
+.card-holder{
+  position: sticky;
+  top:0;
+  display:flex;
+  height: 100vh;
+  align-items: center;
+  overflow: hidden;
+}
+
+.animator{
+  display: flex;
+  gap: 1vw;
+}
+
+.individual-card{
+  position: relative;
+  overflow: hidden;
 }
 
 .logo {
@@ -44,4 +112,147 @@ body{
 
 .read-the-docs {
   color: #888;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  background-color: #36393f;
+  color: #dcddde;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #2f3136;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #36393f;
+  overflow: hidden;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #40444b;
+  color: #dcddde;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: left;
+  font-size: 16px;
+}
+
+.tab-button:hover {
+  background-color: #45494f;
+}
+
+.tab-button.active {
+  background-color: #7289da;
+  color: white;
+}
+
+.tab-button.logout {
+  margin-top: auto;
+  background-color: #ed4245;
+}
+
+.tab-button.logout:hover {
+  background-color: #f04447;
+}
+
+/* Audio Player Styles */
+.audio-player {
+  background-color: #40444b;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.audio-player button {
+  background-color: #7289da;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.audio-player input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Formation Designer Styles */
+.formation-designer {
+  background-color: #40444b;
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+}
+
+.formation-designer .controls {
+  margin-bottom: 20px;
+}
+
+.formation-designer button {
+  background-color: #7289da;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.stage {
+  background-color: #2f3136;
+  border-radius: 8px;
+}
+
+/* Chat Styles */
+.chat-container {
+  background-color: #40444b;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.messages-container {
+  padding: 20px;
+  background-color: #36393f;
+  border-radius: 8px 8px 0 0;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 70%;
+}
+
+.message.sent {
+  background-color: #7289da;
+  color: white;
+  margin-left: auto;
+}
+
+.message.received {
+  background-color: #40444b;
+  color: #dcddde;
+}
+
+.user-info {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #40444b;
+  color: #dcddde;
+  font-size: 14px;
 }

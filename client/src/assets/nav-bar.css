@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, #333333, black);
+    background-color: #F5E2CE;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@
     padding: 1rem 2rem;
     height: 4rem;
     z-index: 10;
-    font-family: 'Redaction 35', serif;
+    font-family: 'Bungee','serif';
     color: white;
 }
 
@@ -38,11 +38,12 @@
 }
 
 .nav-right a {
-    color: red;
+    color: #E5A657;
     text-decoration: none;
     font-size: 20px;
 }
 
 .nav-right a:hover {
     font-size: 25px;
+    color: #B53324;
 }
