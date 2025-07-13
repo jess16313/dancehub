@@ -1,17 +1,18 @@
 import React, { useState,useRef } from 'react';
 import {Routes, Route, Navigate, Link} from 'react-router-dom';
 import { motion, useTransform, useScroll } from "framer-motion";
-import Navbar from "./assets/nav-bar.jsx";
-import './App.css';
+import Navbar from "../assets/nav-bar.jsx";
+import '../App.css';
 
-function App() {
+
+function Default() {
 
     const Card = ({ card }) => {
         return(
             <div key={card.id} className="individual-card">
                 <div className="card-1">
-                <h2>{card.title}</h2>
-                <p>{card.content}</p>
+                    <h2>{card.title}</h2>
+                    <p>{card.content}</p>
                 </div>
             </div>
         )
@@ -23,7 +24,7 @@ function App() {
             target: TargetRef,
         })
 
-        const x = useTransform(scrollYProgress, [0,1], ["50%","-130%"])
+        const x = useTransform(scrollYProgress, [0,1], ["50%","-80%"])
         return (
             <section className='carousel-holder'>
                 <div className= 'card-holder'>
@@ -38,41 +39,41 @@ function App() {
     }
 
     return (
-      <>
-          <Navbar/>
-          <div className="title-container">
-              <div className="title-text">
-                  <h1>DANCEHUB</h1>
-                  <p>The hot spot for communication betweeen dancers. Keeping your videos, soundcuts, formations, and
-                      conversations all in one place!</p>
-              </div>
-          </div>
-          <div className="container-2">
-          <div className="scroll-down">
+        <>
+            <Navbar/>
+            <div className="title-container">
+                <div className="title-text">
+                    <h1>DANCEHUB</h1>
+                    <p>The hot spot for communication betweeen dancers. Keeping your videos, soundcuts, formations, and
+                        conversations all in one place!</p>
+                </div>
+            </div>
+            <div className="container-2">
+                <div className="scroll-down">
           <span className='horizontal-scroll'>
           </span>
-          </div>
-          <HorizontalScrollCarousel/>
-          <div className="scroll-up">
+                </div>
+                <HorizontalScrollCarousel/>
+                <div className="scroll-up">
           <span className= 'horizontal-scroll'>
           </span>
-          </div>
-          </div>
-          <div className="video-container">
-          {/*    video here trust*/}
-          </div>
-          <div className="sign-up-container">
-              <h4>So click here to get started!</h4>
-              <div className="sign-up-button">
-              <Link to="/signup">Sign Up!</Link>
-              </div>
-          </div>
-      </>
-  );
+                </div>
+            </div>
+            <div className="video-container">
+                {/*    video here trust*/}
+            </div>
+            <div className="sign-up-container">
+                <h4>So click here to get started!</h4>
+                <div className="sign-up-button">
+                    <Link to="/signup">Sign Up!</Link>
+                </div>
+            </div>
+        </>
+    );
 
 }
 
-export default App;
+export default Default;
 
 const cards = [
     {
