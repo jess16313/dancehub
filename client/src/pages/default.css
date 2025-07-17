@@ -20,19 +20,22 @@ body{
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background-color: #36393f;
+    min-width:100vw;
+    background-color: #B53324;
     color: #dcddde;
-    margin-top: 80px;
-    padding: 20px;
 }
 
 form {
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    background-color: #2f3136;
+    background-color: #E5A657;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    background-color: #F5E2CE;
 }
 
 h3{
@@ -61,23 +64,23 @@ input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #40444b;
+    border: 1px solid #F5E2CE;
     border-radius: 4px;
-    background-color: #40444b;
-    color: #dcddde;
+    background-color: #F5E2CE;
+    color: #E5A657;
     font-size: 16px;
 }
 
 input:focus {
     outline: none;
-    border-color: #7289da;
+    border-color: #B53324;
 }
 
 .submit-button {
     width: 100%;
     padding: 12px;
-    background-color: #7289da;
-    color: white;
+    background-color: #B53324;
+    color: #E5A657;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -86,7 +89,7 @@ input:focus {
 }
 
 .submit-button:hover {
-    background-color: #677bc4;
+    background-color: #B53324;
 }
 
 .auth-link {
@@ -97,11 +100,11 @@ input:focus {
 .auth-link h3 {
     margin-bottom: 10px;
     font-size: 14px;
-    color: #b9bbbe;
+    color: #B53324;
 }
 
 .auth-link a {
-    color: #7289da;
+    color:#B53324;
     text-decoration: none;
     font-weight: 500;
 }

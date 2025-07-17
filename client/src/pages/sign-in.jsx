@@ -49,7 +49,7 @@ export default function SignUp() {
     return (
         <div className="body">
             <Navbar/>
-            <h2>Sign Up</h2>
+            <h1>Sign Up</h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
